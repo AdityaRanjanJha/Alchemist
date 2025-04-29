@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react' // Import useEffect
 import { NavLink, useNavigate } from 'react-router-dom'
 import {assets} from '../assets/assets'
+import { useTheme } from '../hooks/useTheme'
 
 const Navbar = () => {
     const navigate = useNavigate();
@@ -8,6 +9,7 @@ const Navbar = () => {
     const [showMenu, setShowMenu] = useState(false); // Note: showMenu is declared but not used. Consider removing if not needed.
     const [token, setToken] = useState(true); // Assuming 'token' represents login state
     const [isScrolled, setIsScrolled] = useState(false); // State to track scroll position
+    const { theme, toggleTheme } = useTheme();
 
     // Effect to handle scroll event
     useEffect(() => {
@@ -73,6 +75,9 @@ const Navbar = () => {
 
             {/* User Actions / Login */}
             <div className='flex items-center gap-4'> {/* Added gap for potential mobile menu icon */}
+                <button onClick={toggleTheme} >
+                {theme === "dark" ? "🌞" : "🌙" }
+                </button>
                 {token ? (
                     <div className='relative group'>
                         {/* Profile Trigger - Added subtle hover effect */}
@@ -107,21 +112,8 @@ const Navbar = () => {
                         Create Account
                     </button>
                 )}
-                {/* Mobile Menu Toggle Button Placeholder */}
-                 {/* <button className="md:hidden p-2 rounded-md text-gray-500 hover:text-[#D55E5D] hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#D55E5D]">
-                     <span className="sr-only">Open main menu</span>
-                     {/* Add Menu Icon (e.g., Hamburger) here */}
-                 {/* </button> */}
             </div>
         </div>
-        {/* Mobile Menu (conditionally rendered based on state) */}
-        {/* {showMenu && (
-            <div className="md:hidden">
-                <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                    // Mobile NavLinks here
-                </div>
-            </div>
-        )} */}
     </div>
   )
 }
