@@ -1,6 +1,9 @@
 import React, {useState, useEffect} from 'react' // Import useEffect
 import { NavLink, useNavigate } from 'react-router-dom'
+import React, {useState, useEffect} from 'react' // Import useEffect
+import { NavLink, useNavigate } from 'react-router-dom'
 import {assets} from '../assets/assets'
+import { useTheme } from '../hooks/useTheme'
 
 const Navbar = () => {
     const navigate = useNavigate();
@@ -56,7 +59,29 @@ const Navbar = () => {
                 <NavLink to='/' className={getNavLinkClass}>
                     HOME
                     <hr className={getUnderlineClass()} />
+    // Use w-screen for full width, sticky positioning, and updated scrolled background
+    <div className={`px-4 sm:px-8 md:px-12 lg:px-16 py-3 sticky top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled ? 'bg-[#F6F0E3] shadow-md border-b border-gray-200' : 'bg-transparent' // Changed scrolled background, kept shadow and border
+    }`}>
+        {/* Inner container uses max-w-screen-xl and mx-auto to center content */}
+        <div className='flex items-center justify-between w-full max-w-screen-xl mx-auto'>
+            {/* Logo */}
+            <img
+                className='w-32 md:w-40 cursor-pointer' // Slightly smaller logo
+                src={assets.logo}
+                alt="Alchemist Logo"
+                onClick={() => navigate('/')}
+            />
+
+            {/* Desktop Navigation - Increased gap, centered items */}
+            <nav className='hidden md:flex items-center gap-8 lg:gap-12'>
+                <NavLink to='/' className={getNavLinkClass}>
+                    HOME
+                    <hr className={getUnderlineClass()} />
                 </NavLink>
+                <NavLink to='/teachers' className={getNavLinkClass}>
+                    ALL TEACHERS
+                    <hr className={getUnderlineClass()} />
                 <NavLink to='/teachers' className={getNavLinkClass}>
                     ALL TEACHERS
                     <hr className={getUnderlineClass()} />
@@ -64,7 +89,13 @@ const Navbar = () => {
                 <NavLink to='/contact' className={getNavLinkClass}>
                     CONTACT
                     <hr className={getUnderlineClass()} />
+                <NavLink to='/contact' className={getNavLinkClass}>
+                    CONTACT
+                    <hr className={getUnderlineClass()} />
                 </NavLink>
+                <NavLink to='/about' className={getNavLinkClass}>
+                    ABOUT
+                    <hr className={getUnderlineClass()} />
                 <NavLink to='/about' className={getNavLinkClass}>
                     ABOUT
                     <hr className={getUnderlineClass()} />
