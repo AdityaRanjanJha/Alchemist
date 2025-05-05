@@ -7,9 +7,10 @@ import Teachers from './pages/Teachers'
 import Login from './pages/Login'
 import About from './pages/About'
 import Contact from './pages/Contact'
-import MyAppointments from './MyAppointments' // Assuming this exists
+import MyAppointments from './pages/MyAppointments' // Assuming this exists
 import Appointment from './pages/Appointment'
 import Navbar from './components/Navbar'
+import MyProfile from './pages/MyProfile'
 // Assuming Element is defined or imported elsewhere if used for /my-profile
 // import Element from './path/to/Element';
 
@@ -36,6 +37,7 @@ function App() {
           <Route path='/my-appointments' element={<MyAppointments/>}/>
           {/* Corrected parameter name to match useParams in Appointment.jsx */}
           <Route path='/appointment/:teacherId' element={<Appointment/>}/>
+          <Route path='/my-profile' element={<MyProfile/>}/>
         </Routes>
 
         {/* DarkModeToggle might be better placed inside specific pages or layout */}
