@@ -1,6 +1,6 @@
 import './index.css'
 import './App.css'
-import DarkModeToggle from './components/DarkModeToggle'
+
 import { Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
 import Teachers from './pages/Teachers'
@@ -20,8 +20,7 @@ function App() {
     // Consider removing mx-4 sm:mx-[10%] if Navbar should be full width
     // Or apply padding/margin only to content below Navbar
     <div>
-    // Consider removing mx-4 sm:mx-[10%] if Navbar should be full width
-    // Or apply padding/margin only to content below Navbar
+   
     <div>
       <Navbar/>
       {/* Apply margin/padding to the content area if needed */}
@@ -44,12 +43,11 @@ function App() {
         </Routes>
 
         {/* DarkModeToggle might be better placed inside specific pages or layout */}
-        <DarkModeToggle/>
+
       </div>
       {/* Assuming Footer component exists and should be outside the margin container */}
       {/* <Footer /> */}
-        {/* DarkModeToggle might be better placed inside specific pages or layout */}
-        <DarkModeToggle/>
+
       </div>
       {/* Assuming Footer component exists and should be outside the margin container */}
       {/* <Footer /> */}
