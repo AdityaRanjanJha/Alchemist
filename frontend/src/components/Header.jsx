@@ -7,10 +7,10 @@ import { assets } from '../assets/assets.js';
 function FeatureCard({ icon, title, description }) {
   return (
     <div className="text-center md:text-left p-4">
-       <div className="mb-3 inline-block bg-pink-100 p-3 rounded-full">
+       {/* <div className="mb-3 inline-block bg-pink-100 p-3 rounded-full">
          { icon && <img src={icon} alt="" className="w-6 h-6" /> }
-         { !icon && <span className="w-6 h-6 block"></span> } {/* Placeholder */}
-       </div>
+         { !icon && <span className="w-6 h-6 block"></span> } 
+       </div> */}
        <h3 className="text-lg font-semibold text-gray-800 mb-2">{title}</h3>
        <p className="text-sm text-gray-600">{description}</p>
     </div>

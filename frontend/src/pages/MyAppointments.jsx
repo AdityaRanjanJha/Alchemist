@@ -136,11 +136,11 @@ const MyAppointments = () => {
 
                     {/* Actions Section */}
                     <div className="flex flex-col items-stretch sm:items-end justify-center gap-3 mt-4 sm:mt-0 w-full sm:w-auto">
-                      <button
+                      {/* <button
                         className="px-4 py-2 text-sm font-medium rounded-md border border-[#D55E5D] text-[#D55E5D] bg-white hover:bg-[#D55E5D] hover:text-white transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#D55E5D]"
                       >
                         Pay Online
-                      </button>
+                      </button> */}
                       <button
                         className="px-4 py-2 text-sm font-medium rounded-md border border-red-500 text-red-500 bg-white hover:bg-red-500 hover:text-white transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-400"
                         onClick={() => handleCancel(idx)}
